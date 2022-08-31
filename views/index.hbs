@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamic Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <div class="hero">
+      
+        
+          <nav class="navbar col-md-6">
+            
+              <img src="../static/images/logo.png" alt="" class="logo">
+            
+            
+              
+              <ul class="">
+                {{#each details.links}}
+                <li class="">
+                  <a class="" aria-current="page" href="{{this.url}}">{{this.label}}</a>
+                </li>
+                {{/each}}
+              </ul>
+                        
+            
+          </nav>
+          
+        
+      
+      <div class="content">
+        <small>Welcome to our </small>
+        <h1>World's <br> Creative Studio</h1>
+        <button type="button" class="button">Take a Tour</button>
+        
+      </div>
+      <div class="bubbles">
+          <img src="../static/images/bubble.png" alt="">
+          <img src="../static/images/bubble.png" alt="">
+          <img src="../static/images/bubble.png" alt="">
+          <img src="../static/images/bubble.png" alt="">
+          <img src="../static/images/bubble.png" alt="">
+          <img src="../static/images/bubble.png" alt="">
+          <img src="../static/images/bubble.png" alt="">
+        </div>
+    </div>
+
+    {{!-- banner 1 section --}}
+
+    <section class="banner1_section py-5 styling2">
+
+      <div class="container text-center">
+        <div class="row">
+        <div class="col-md-12 ">
+
+          <h1>Start learning new technologies here! </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure commodi aliquam expedita, facilis tempora quisquam veritatis dolorum nisi repellat, id eaque labore quidem? Ea fugit velit quibusdam ipsum labore voluptatem?
+          </p>
+          <button class="btn btn-outline-primary">Start Learning</button>
+        </div>
+      </div>
+      </div>
+
+    </section>
+
+
+
+   {{!-- Services Section --}}
+
+    <section id="services_section" class =" styling1 py-4">
+
+
+      <div class="container">
+
+
+        <h1 class="text-center text-secondary">Services that we provide</h1>
+      <div class="row mt-5 ">
+        {{#each services}}
+        <div class="col-md-4 mb-4 ">
+
+          <div class="card styling2">
+            <div class="card-body">
+              <div class="container text-center py-3 service_icon ">
+                <i class="{{this.icon}} services_icon text-secondary"></i>
+              </div>
+              <h5 class="card-title">{{this.title}}</h5>
+              <p>{{this.description}}</p>
+
+              <a href="{{this.linkText}}" style="text-decoration: none;" class="text-secondary ">{{this.link}}</a>
+              
+
+            </div>
+          </div>
+
+        </div>
+        {{/each}}
+
+      </div>
+
+      </div>
+
+    </section>
+
+    {{!-- Banner 2 Section --}}
+
+    <section class="banner2_section styling1">
+
+      <div class="container">
+        <div class="row styling1">
+          <div class="col-md-6 text-center" style="padding-top:150px;">
+            {{!-- Left side --}}
+            <h3>
+              We work for People, not for Money
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, corporis labore, minima voluptate voluptatum dolorum dicta dolore eligendi tempora asperiores animi quisquam culpa nam repellendus facilis, assumenda obcaecati deleniti! Ab.
+            </p>
+            <button class="btn btn-primary">Click HERE</button>
+
+
+          </div>
+          <div class="col-md-6 py-2 text-center">
+            {{!-- Right side --}}
+            <img src="../static/images/section2.jpg " style="max-height: 500px;" alt="">
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    {{!-- contact us section --}}
+
+    <section id="contact_us_section" class="styling py-5">
+      <div class="container">
+        <h3 class="text-center text-secondary">Contact Us </h3>
+        <div class="row">
+          <div class="col-md-12">
+
+
+            <form action="/process-contact-form" method="post">
+            <div class="mb-3" >
+              <label for="exampleInputEmail1" class="form-label">Your email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactNumberField" class="form-label">Your Conatct Number </label>
+              <input name="phone" type="number" class="form-control" id="conatctNumberField">
+            </div>
+
+            <div class="form-floating">
+              <textarea name="query" class="form-control" style="height: 150px;" placeholder="Enter your query here" id="queryField"></textarea>
+              <label for="queryField">Your Query</label>
+            </div>
+
+            <div class="container text-center mt-3">
+              <button type="submit" class="btn-dark btn-primary">Submit</button>
+            </div>
+            
+            
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
